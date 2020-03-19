@@ -1,4 +1,4 @@
-const {getCovData,sendMessageToMany} =require("./bot")
+const {getCovData,sendMessageToMany,sendMessageToOne} =require("./bot")
 const {access_token}=require("../../config")
 const Record=require("../../model/Record")
 const User=require("../../model/User")

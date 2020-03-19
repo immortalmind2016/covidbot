@@ -101,7 +101,7 @@ ${countries}
 
            
             if(user.new)
-            User.Record({name:text},(err,record)=>{
+            Record.find({name:text},(err,record)=>{
               if(record)
               sendMessageToOne(user.messenger_id,{text:`
               البلد : ${record.name} 
