@@ -4,7 +4,7 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var mongoose=require("mongoose")
-mongoose.connect("YOUR DB URL")
+mongoose.connect("mongodb://immortalmind:0115120323a@ds147354.mlab.com:47354/covbot")
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 

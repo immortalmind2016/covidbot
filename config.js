@@ -1,3 +1,3 @@
 module.exports={
-    access_token:"YOUR PAGE ACCESS"
+    access_token:"EAAvlo6vZCFFIBAHC8cqR8IXpZCnBPECa1N6cDl9GSGgaF5PDa1UEjclmsMtZBHf8uJoqMFeMh2oqwSbwfdZAY7ZAJGjmSqmthkb3Sbk35zIKR9nYZBjdcnCuT76B6hFpD3XmQR6smV3VK9wZBhF6HjZABZBPNMcVd5MEiqZA7pb86pq7hJ1MFbloPei2DjPzmHcBkZD"
 }
