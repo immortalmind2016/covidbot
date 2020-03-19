@@ -1,7 +1,7 @@
 const mongoose=require("mongoose");
 const Schema=mongoose.Schema;
 const Record=new Schema({
-    name:{type:String,default:"0",unique:true},
+    name:{type:String,default:"0"},
     totalCases:{type:String,default:"0"},
     newCases:{type:String,default:"0"},
     totalDeaths:{type:String,default:"0"},
