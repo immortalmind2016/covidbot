@@ -64,7 +64,7 @@ router.post("/webhook",async(req,res,err)=>{
         let payload=messaging.postback.payload
         if(payload=="REGISTER"){
           user.last_input_value="REGISTER"
-         
+         user.new=true;
           console.log(messaging)
           sendMessageToOne(user.messenger_id,{text:`
 ${countries}
@@ -103,7 +103,7 @@ ${countries}
           
           `},access_token).then(()=>{
             user.country=text
-
+            
            
             if(user.new){
               Record.findOne({name:text},(err,record)=>{
