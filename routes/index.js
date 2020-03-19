@@ -49,19 +49,19 @@ router.get("/refresh",(req,res,err)=>{
 
 })
 router.post("/webhook",async(req,res,err)=>{
-  const entry=req.body.entry[0]
+  let entry=req.body.entry[0]
   
   if(!entry.messaging){
     return res.sendStatus(200)
   }
-  const messaging=entry.messaging[0]
+  let messaging=entry.messaging[0]
   let senderid=messaging.sender.id
   let pageid=messaging.recipient.id
   let user=await User.findOne({messenger_id:senderid})
    
     if(user){
       if(messaging.postback){
-        const payload=messaging.postback.payload
+        conletst payload=messaging.postback.payload
         if(payload=="REGISTER"){
           user.last_input_value="REGISTER"
          
@@ -94,7 +94,7 @@ ${countries}
         if(user.last_input_value=="REGISTER"){
           user.last_input_value="GET_STARTED"
        
-          const text=messaging.message.text.toLowerCase();
+          let text=messaging.message.text.toLowerCase();
           console.log("MEESSA",text)
           
           sendMessageToOne(user.messenger_id,{text:`
