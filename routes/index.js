@@ -105,22 +105,32 @@ ${countries}
             user.country=text
 
            
-            if(user.new)
-            Record.findOne({name:text},(err,record)=>{
-              if(record)
+            if(user.new){
+              Record.findOne({name:text},(err,record)=>{
+                if(record)
+                sendMessageToOne(user.messenger_id,{text:`
+                البلد : ${record.name} 
+                جميع الحالات : ${record.totalCases}
+                جميع الوفيات : ${record.totalDeaths}
+                جميع حالات الشفاء : ${record.totalRecovered}
+                الحالات النشطه : ${record.activeCases}
+                الحالات الجديده : ${record.newCases}
+                حالات الوفيات الجديده : ${record.newDeaths}
+                حالات خطرة : ${record.seriousCritical}`},access_token)
+  
+              })
+               user.new=false
+            }
+            
+            
+            else{
               sendMessageToOne(user.messenger_id,{text:`
-              البلد : ${record.name} 
-              جميع الحالات : ${record.totalCases}
-              جميع الوفيات : ${record.totalDeaths}
-              جميع حالات الشفاء : ${record.totalRecovered}
-              الحالات النشطه : ${record.activeCases}
-              الحالات الجديده : ${record.newCases}
-              حالات الوفيات الجديده : ${record.newDeaths}
-              حالات خطرة : ${record.seriousCritical}`},access_token)
+              يرجى الالتزام باسم البلد من القائمة فقط`
 
             })
+            }
          
-            user.new=false
+           
             user.save()
           }).catch((e)=>{
           })
