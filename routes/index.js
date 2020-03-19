@@ -99,7 +99,7 @@ ${countries}
           `},access_token).then(()=>{
             user.country=text
 
-            user.new=false
+           
             if(user.new)
             User.Record({name:text},(err,record)=>{
               if(record)
@@ -115,7 +115,7 @@ ${countries}
 
             })
          
-
+            user.new=false
             user.save()
           }).catch((e)=>{
           })
