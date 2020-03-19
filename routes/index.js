@@ -55,9 +55,9 @@ router.post("/webhook",async(req,res,err)=>{
     return res.sendStatus(200)
   }
   const messaging=entry.messaging[0]
-  senderid=messaging.sender.id
-  pageid=messaging.recipient.id
-  user=await User.findOne({messenger_id:senderid})
+  let senderid=messaging.sender.id
+  let pageid=messaging.recipient.id
+  let user=await User.findOne({messenger_id:senderid})
    
     if(user){
       if(messaging.postback){

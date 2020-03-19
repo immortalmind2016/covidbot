@@ -15,14 +15,14 @@ const Record=new Schema({
     },
 })
 Record.index({ 
-    name:1,
-    totalCases:1,
-    newCases:1,
-    totalDeaths:1,
-    newDeaths:1,
-    totalRecovered:1,
-    activeCases:1,
-    seriousCritical:1
+    "name":1,
+    "totalCases":1,
+    "newCases":1,
+    "totalDeaths":1,
+    "newDeaths":1,
+    "totalRecovered":1,
+    "activeCases":1,
+    "seriousCritical":1
 }, { unique: true });
 
 module.exports=mongoose.model("Record",Record)
