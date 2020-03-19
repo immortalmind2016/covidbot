@@ -61,7 +61,7 @@ router.post("/webhook",async(req,res,err)=>{
    
     if(user){
       if(messaging.postback){
-        conletst payload=messaging.postback.payload
+        let payload=messaging.postback.payload
         if(payload=="REGISTER"){
           user.last_input_value="REGISTER"
          
