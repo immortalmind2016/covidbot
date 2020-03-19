@@ -3,6 +3,8 @@ var router = express.Router();
 const {access_token} =require("../config")
 const {sendMessageToOne,getUserProfile,welcome_message,countries}=require('./helpers/bot')
 const User=require("../model/User")
+const Record=require("../model/Record")
+
 const axios=require("axios")
 require("./helpers/records")
 /* GET home page. */
@@ -67,8 +69,11 @@ ${countries}
           باستخدام القائمه
           
           `},access_token).then(()=>{
+         
+
+
             user.save()
-        
+            
           }).catch(()=>{
       
           })
@@ -93,6 +98,24 @@ ${countries}
           
           `},access_token).then(()=>{
             user.country=text
+
+            user.new=false
+            if(user.new)
+            User.Record({name:text},(err,record)=>{
+              if(record)
+              sendMessageToOne(user.messenger_id,{text:`
+              البلد : ${record.name} 
+              جميع الحالات : ${record.totalCases}
+              جميع الوفيات : ${record.totalDeaths}
+              جميع حالات الشفاء : ${record.totalRecovered}
+              الحالات النشطه : ${record.activeCases}
+              الحالات الجديده : ${record.newCases}
+              حالات الوفيات الجديده : ${record.newDeaths}
+              حالات خطرة : ${record.seriousCritical}`},access_token)
+
+            })
+         
+
             user.save()
           }).catch((e)=>{
           })

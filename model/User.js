@@ -23,6 +23,8 @@ const User=new Schema({
         type:String,
         default:""
     },
+    new:{type:Boolean,default:true},
+
     last_name:{
         type:String,
         default:""
