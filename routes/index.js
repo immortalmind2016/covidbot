@@ -43,6 +43,11 @@ await axios.post(`https://graph.facebook.com/v6.0/me/messenger_profile?access_to
 res.send(200)
 
 })
+
+router.get("/refresh",(req,res,err)=>{
+   res.sendStatus(200)
+
+})
 router.post("/webhook",async(req,res,err)=>{
   const entry=req.body.entry[0]
   

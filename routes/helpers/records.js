@@ -2,9 +2,10 @@ const {getCovData,sendMessageToMany,sendMessageToOne} =require("./bot")
 const {access_token}=require("../../config")
 const Record=require("../../model/Record")
 const User=require("../../model/User")
-
+const axios=require("axios")
 setInterval(async()=>{
 
+    axios.get("/refresh").then(()=>{}).catch(()=>{})
     let analysis=await getCovData()
     analysis.forEach(element => {
         if(element.name=="egypt"){
