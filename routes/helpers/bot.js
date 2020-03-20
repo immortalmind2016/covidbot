@@ -285,7 +285,7 @@ async function getHTML(url) {
         })
         console.log(countries.length)
         
-        resolve(countries.filter((c)=>(!c.newDeaths!=""||!c.newCases!=""||!c.totalRecovered)))
+        resolve(countries.filter((c)=>(c.newDeaths!=""||c.newCases!=""||c.totalRecovered!="")))
     })
     
   }
