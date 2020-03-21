@@ -118,7 +118,7 @@ ${countries}
                 حالات الوفيات الجديده : ${record.newDeaths}
                 حالات خطرة : ${record.seriousCritical}`},access_token)
   
-              })
+              }).sort({_id:-1})
                user.new=false
             }
             
