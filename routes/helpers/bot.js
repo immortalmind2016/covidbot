@@ -271,6 +271,7 @@ async function getHTML(url) {
             
 
             }
+            if($($(this).children()[2]).text()!="")
             countries.push({
               name:$($(this).children()[0]).text().toLowerCase(),
               totalCases:$($(this).children()[1]).text(),
