@@ -1,4 +1,8 @@
 # COVID Bot
+## Description
+covbot is a facebook chatbot which send users last corona virus analysis (e.g. numbers) inside all countries 
+it's based on webscrapping from
+> https://www.worldometers.info/coronavirus/
 ## Installation
 > npm install
 ## Configuration
