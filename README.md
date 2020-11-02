@@ -12,4 +12,6 @@ it's based on webscrapping from
 ### set your facebook application webhook
 ### add subscription to specific page
 
+### Using 
+Nodejs,express,axios,web scraping, cheerio and jade Template engine
 
